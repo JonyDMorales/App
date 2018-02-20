@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title> {{ estado }} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h2>Selecciona tu casilla</h2>
+    <div *ngFor="let i of numeroCasillas" padding-top>
+        <button color="dark" (click)="goPage(i)" ion-button round block>  Casilla #{{ i }} </button>
+    </div>
+</ion-content>

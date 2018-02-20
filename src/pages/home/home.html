@@ -1,22 +1,16 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="dark">
         <ion-title>Home</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <h2>Selecciona tu casilla</h2>
+    <h2>Selecciona tu estado</h2>
 
-    <hr>
-    <button ion-button color="dark" clear>Secondary Round   <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon> </button>
-    <hr>
-    <button ion-button color="dark" clear>Secondary Round</button>
-    <hr>
-    <button ion-button color="dark" clear>Secondary Round</button>
-    <hr>
-    <button ion-button color="dark" clear>Secondary Round</button>
-    <hr>
-    <button ion-button color="dark" clear>Secondary Round</button>
-    <hr>
+    <div *ngFor="let estado of estados" padding-top>
+        <ion-list-header (click)="goPage(estado)">
+            {{ estado }}
+        </ion-list-header>
+    </div>
 
 </ion-content>

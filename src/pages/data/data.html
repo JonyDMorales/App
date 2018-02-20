@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title> {{ estado }} #{{ numeroCasilla }} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h2>Datos</h2>
+    <ion-card *ngFor="let candidato of candidatos">
+        <img src="assets/imgs/logo.png">
+        <ion-card-header>
+            <ion-card-title> Candidato a {{ candidato }} </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-item>
+                <ion-label floating>Votos:</ion-label>
+                <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <ion-fab right bottom>
+        <button ion-fab color="dark">
+    		<ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    	</button>
+    </ion-fab>
+    <button ion-button color="dark" class="button-block" (click)="showConfirm()" round block>Enviar</button>
+</ion-content>
