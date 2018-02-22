@@ -9,9 +9,11 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DataPage } from '../pages/data/data';
 import { EstadoPage } from '../pages/estado/estado';
+import { CandidatoPage } from '../pages/candidato/candidato.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     DataPage,
     EstadoPage,
+    CandidatoPage,
     TabsPage
   ],
   imports: [
@@ -35,11 +38,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     DataPage,
     EstadoPage,
+    CandidatoPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

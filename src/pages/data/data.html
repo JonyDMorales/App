@@ -6,11 +6,24 @@
 
 
 <ion-content padding>
-    <h2>Datos</h2>
-    <ion-card *ngFor="let candidato of candidatos">
-        <img src="assets/imgs/logo.png">
+    <h2>Candidato a {{ candidato }}</h2>
+    <ion-card *ngFor="let partido of partidos">
+
+        <div [ngSwitch]="partido">
+            <img *ngSwitchCase="'PRI'" src="assets/imgs/pri.jpg">
+            <img *ngSwitchCase="'PAN'" src="assets/imgs/pan.jpg">
+            <img *ngSwitchCase="'MORENA'" src="assets/imgs/morena.jpg">
+            <img *ngSwitchCase="'PRD'" src="assets/imgs/prd.jpg">
+            <img *ngSwitchCase="'Movimiento Ciudadano'" src="assets/imgs/movimiento-ciudadano.jpg">
+            <img *ngSwitchCase="'Nueva Alianza'" src="assets/imgs/nueva-alianza.jpg">
+            <img *ngSwitchCase="'Partido Encuentro Social'" src="assets/imgs/pes.jpg">
+            <img *ngSwitchCase="'Partido Verde'" src="assets/imgs/verde.jpg">
+            <img *ngSwitchCase="'Partido del Trabajo'" src="assets/imgs/pt.jpg">
+        </div>
+        <!--<img src="assets/imgs/pri.jpg" *ngIf="partido == 'PRI'">-->
+
         <ion-card-header>
-            <ion-card-title> Candidato a {{ candidato }} </ion-card-title>
+            <ion-card-title> {{ partido }} </ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
@@ -19,11 +32,15 @@
                 <ion-input type="text"></ion-input>
             </ion-item>
         </ion-card-content>
+
     </ion-card>
+
     <ion-fab right bottom>
-        <button ion-fab color="dark">
+        <button ion-fab color="dark" (click)="takePicture()">
     		<ion-icon ios="ios-camera" md="md-camera"></ion-icon>
     	</button>
     </ion-fab>
-    <button ion-button color="dark" class="button-block" (click)="showConfirm()" round block>Enviar</button>
+
+    <button ion-button color="dark" class="button-block" (click)="showConfirm()" round block>Guardar</button>
+
 </ion-content>

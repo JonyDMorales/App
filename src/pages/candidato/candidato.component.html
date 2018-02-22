@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>Candidato</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Selecciona al candidato de {{ estado }}</h2>
+
+    <div *ngFor="let candidato of candidatos" padding-top>
+        <ion-list-header (click)="goPage(candidato)">
+            {{ candidato }}
+        </ion-list-header>
+    </div>
+
+</ion-content>

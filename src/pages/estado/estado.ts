@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DataPage } from '../data/data';
+import { CandidatoPage } from '../candidato/candidato.component';
 
 @Component({
     selector: 'page-estado',
@@ -16,6 +16,6 @@ export class EstadoPage {
     }
 
     public goPage(i){
-        this._navController.push(DataPage, { estado: this.estado, 'casilla': i });
+        this._navController.push(CandidatoPage, { estado: this.estado, 'casilla': i });
     }
 }
