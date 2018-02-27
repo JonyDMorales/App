@@ -1,12 +1,12 @@
 <ion-header>
     <ion-navbar color="dark">
-        <ion-title> {{ estado }} #{{ numeroCasilla }} </ion-title>
+        <ion-title> {{ candidato }} </ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <h2>Candidato a {{ candidato }}</h2>
+    <h2> {{ estado }} #{{ numeroCasilla }} </h2>
     <ion-card *ngFor="let partido of partidos">
 
         <div [ngSwitch]="partido">
@@ -20,7 +20,6 @@
             <img *ngSwitchCase="'Partido Verde'" src="assets/imgs/verde.jpg">
             <img *ngSwitchCase="'Partido del Trabajo'" src="assets/imgs/pt.jpg">
         </div>
-        <!--<img src="assets/imgs/pri.jpg" *ngIf="partido == 'PRI'">-->
 
         <ion-card-header>
             <ion-card-title> {{ partido }} </ion-card-title>

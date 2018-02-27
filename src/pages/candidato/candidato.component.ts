@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataPage } from '../data/data';
 
 @Component({
@@ -21,7 +21,7 @@ export class CandidatoPage {
         'Alcalde'   
     ];
 
-    constructor(public _navController: NavController, public _navParams: NavParams) {
+    constructor(public _navController: NavController, public _navParams: NavParams,public _alertController:AlertController) {
         this.estado = this._navParams.get('estado');
         this.numeroCasilla = this._navParams.get('casilla');
     }
@@ -29,5 +29,27 @@ export class CandidatoPage {
     public goPage(candidato){
         this._navController.push(DataPage, { estado: this.estado, 'casilla': this.numeroCasilla, candidato: candidato });
     }
+
+    showConfirm() {
+        let confirm = this._alertController.create({
+          title: 'Corroborar',
+          message: '¿Estás seguro que la información es correcta?',
+          buttons: [
+            {
+              text: 'No',
+              handler: () => {
+                console.log('Disagree clicked');
+              }
+            },
+            {
+              text: 'Sí',
+              handler: () => {
+                console.log('Agree clicked');
+              }
+            }
+          ]
+        });
+        confirm.present();
+      }
 
 }
